@@ -7,68 +7,95 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 5 | Scripts: 1 | Modules: 0 | Tags: 0
+-- Instances: 6 | Scripts: 2 | Modules: 0 | Tags: 0
 local G2L = {};
 
--- Workspace.MainModule.loader
+-- StarterGui.loade
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 G2L["1"]["IgnoreGuiInset"] = true;
 G2L["1"]["DisplayOrder"] = 999;
 G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
-G2L["1"]["Name"] = [[loader]];
+G2L["1"]["Name"] = [[loade]];
 G2L["1"]["ResetOnSpawn"] = false;
 
 
--- Workspace.MainModule.loader.BubbIeChat
-G2L["2"] = Instance.new("LocalScript", G2L["1"]);
-G2L["2"]["Name"] = [[BubbIeChat]];
+-- StarterGui.loade.Frame
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["ZIndex"] = 10;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2"]["Size"] = UDim2.new(0, 500, 0, 100);
+G2L["2"]["Position"] = UDim2.new(-0.168, 0, 0.398, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["2"]["BackgroundTransparency"] = 1;
 
 
--- Workspace.MainModule.loader.Frame
-G2L["3"] = Instance.new("Frame", G2L["1"]);
+-- StarterGui.loade.Frame.TextLabelz
+G2L["3"] = Instance.new("TextLabel", G2L["2"]);
+G2L["3"]["TextWrapped"] = true;
 G2L["3"]["ZIndex"] = 10;
+G2L["3"]["TextSize"] = 14;
+G2L["3"]["TextTransparency"] = 1;
+G2L["3"]["TextScaled"] = true;
 G2L["3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["3"]["Size"] = UDim2.new(0, 500, 0, 100);
-G2L["3"]["Position"] = UDim2.new(-0.30198, 0, -0.09033, 0);
-G2L["3"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["3"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["3"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["3"]["BackgroundTransparency"] = 1;
-
-
--- Workspace.MainModule.loader.Frame.TextLabelz
-G2L["4"] = Instance.new("TextLabel", G2L["3"]);
-G2L["4"]["TextWrapped"] = true;
-G2L["4"]["ZIndex"] = 10;
-G2L["4"]["TextSize"] = 14;
-G2L["4"]["TextTransparency"] = 1;
-G2L["4"]["TextScaled"] = true;
-G2L["4"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["4"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["4"]["BackgroundTransparency"] = 1;
-G2L["4"]["Size"] = UDim2.new(0, 300, 0, 100);
-G2L["4"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
-G2L["4"]["Text"] = [[UNDENIED ServerSide by Ploish and essential!
+G2L["3"]["Size"] = UDim2.new(0, 300, 0, 100);
+G2L["3"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["3"]["Text"] = [[UNDENIED ServerSide by Ploish and essential!
 Run script serversided with no dumb ass webserver requests
 Made with real API so dw abt stupid webservers ;)
 
 status: Injected]];
-G2L["4"]["Name"] = [[TextLabelz]];
-G2L["4"]["Position"] = UDim2.new(0.5, -150, 0, 0);
+G2L["3"]["Name"] = [[TextLabelz]];
+G2L["3"]["Position"] = UDim2.new(0.5, -150, 0, 0);
 
 
--- Workspace.MainModule.loader.Frame.ImageLabel
-G2L["5"] = Instance.new("ImageLabel", G2L["3"]);
+-- StarterGui.loade.Frame.TextLabelz.LocalScript
+G2L["4"] = Instance.new("LocalScript", G2L["3"]);
+
+
+
+-- StarterGui.loade.Frame.ImageLabel
+G2L["5"] = Instance.new("ImageLabel", G2L["2"]);
 G2L["5"]["ZIndex"] = 10;
 G2L["5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["5"]["Image"] = [[rbxassetid://113585777196534]];
+G2L["5"]["Image"] = [[rbxassetid://74942078180275]];
 G2L["5"]["Size"] = UDim2.new(0, 100, 0, 100);
 G2L["5"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
 G2L["5"]["BackgroundTransparency"] = 1;
 
 
--- Workspace.MainModule.loader.BubbIeChat
-local function C_2()
-local script = G2L["2"];
+-- StarterGui.loade.BubbIeChat
+G2L["6"] = Instance.new("LocalScript", G2L["1"]);
+G2L["6"]["Name"] = [[BubbIeChat]];
+
+
+-- StarterGui.loade.Frame.TextLabelz.LocalScript
+local function C_4()
+local script = G2L["4"];
+	while true do
+		local sps = game.Workspace:FindFirstChild("StarterPackStorage")
+	
+		if sps then
+			script.Parent.Text = [[UNDENIED ServerSide by Ploish and essential!
+	Run script serversided with no dumb ass webserver requests
+	Made with real API so dw abt stupid webservers ;)
+	status: Injected]]
+		else
+			script.Parent.Text = [[UNDENIED ServerSide by Ploish and essential!
+	Run script serversided with no dumb ass webserver requests
+	Made with real API so dw abt stupid webservers ;)
+	status: Failed to inject]]
+		end
+	
+		wait(0.1)
+	end
+end;
+task.spawn(C_4);
+-- StarterGui.loade.BubbIeChat
+local function C_6()
+local script = G2L["6"];
 	
 	hi = script.Parent:WaitForChild'Frame'
 	hi:TweenPosition(UDim2.new(0.5, -50,0.5, -50), Enum.EasingDirection.In)
@@ -90,6 +117,6 @@ local script = G2L["2"];
 	end
 	Instance.new('Folder', hi.morphb)
 end;
-task.spawn(C_2);
+task.spawn(C_6);
 
 return G2L["1"], require;
