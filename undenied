@@ -1,122 +1,186 @@
---[=[
- d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
-88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
-88      88    88    88            odD'      88      88    88 88ooo88 
-88  ooo 88    88    88          .88'        88      88    88 88~~~88 
-88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
- Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
-]=]
+-- Gui to Lua
+-- Version: 3.2
 
--- Instances: 6 | Scripts: 2 | Modules: 0 | Tags: 0
-local G2L = {};
+-- Instances:
 
--- StarterGui.loade
-G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
-G2L["1"]["IgnoreGuiInset"] = true;
-G2L["1"]["DisplayOrder"] = 999;
-G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
-G2L["1"]["Name"] = [[loade]];
-G2L["1"]["ResetOnSpawn"] = false;
+local Loader = Instance.new("ScreenGui")
+local Main = Instance.new("ImageLabel")
+local Orbit = Instance.new("ImageLabel")
+local UICorner = Instance.new("UICorner")
+local Ring = Instance.new("ImageLabel")
+local Main2 = Instance.new("ImageLabel")
+local TextLabel = Instance.new("TextLabel")
 
+--Properties:
 
--- StarterGui.loade.Frame
-G2L["2"] = Instance.new("Frame", G2L["1"]);
-G2L["2"]["ZIndex"] = 10;
-G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["2"]["Size"] = UDim2.new(0, 500, 0, 100);
-G2L["2"]["Position"] = UDim2.new(-0.168, 0, 0.398, 0);
-G2L["2"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
-G2L["2"]["BackgroundTransparency"] = 1;
+Loader.Name = "Loader"
+Loader.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Loader.DisplayOrder = 999
+Loader.ResetOnSpawn = false
 
+Main.Name = "Main"
+Main.Parent = Loader
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.BackgroundTransparency = 1.000
+Main.Position = UDim2.new(0.014769231, 0, 0.864447057, 0)
+Main.Size = UDim2.new(0, 100, 0, 100)
+Main.Image = "rbxassetid://78171025368107"
 
--- StarterGui.loade.Frame.TextLabelz
-G2L["3"] = Instance.new("TextLabel", G2L["2"]);
-G2L["3"]["TextWrapped"] = true;
-G2L["3"]["ZIndex"] = 10;
-G2L["3"]["TextSize"] = 14;
-G2L["3"]["TextTransparency"] = 1;
-G2L["3"]["TextScaled"] = true;
-G2L["3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["3"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["3"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["3"]["BackgroundTransparency"] = 1;
-G2L["3"]["Size"] = UDim2.new(0, 300, 0, 100);
-G2L["3"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
-G2L["3"]["Text"] = [[UNDENIED ServerSide by Ploish and essential!
-Run script serversided with no dumb ass webserver requests
-Made with real API so dw abt stupid webservers ;)
+Orbit.Name = "Orbit"
+Orbit.Parent = Main
+Orbit.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Orbit.BackgroundTransparency = 0.800
+Orbit.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Orbit.Size = UDim2.new(0.170000002, 0, 0.170000002, 0)
+Orbit.ZIndex = 2
+Orbit.Image = "rbxassetid://126464068848881"
 
-status: Injected]];
-G2L["3"]["Name"] = [[TextLabelz]];
-G2L["3"]["Position"] = UDim2.new(0.5, -150, 0, 0);
+UICorner.CornerRadius = UDim.new(1, 0)
+UICorner.Parent = Orbit
 
+Ring.Name = "Ring"
+Ring.Parent = Main
+Ring.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Ring.BackgroundTransparency = 1.000
+Ring.Size = UDim2.new(1, 0, 1, 0)
+Ring.Image = "rbxassetid://70814474011440"
 
--- StarterGui.loade.Frame.TextLabelz.LocalScript
-G2L["4"] = Instance.new("LocalScript", G2L["3"]);
+Main2.Name = "Main2"
+Main2.Parent = Main
+Main2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main2.BackgroundTransparency = 1.000
+Main2.Size = UDim2.new(1, 0, 1, 0)
+Main2.ZIndex = 3
+Main2.Image = "rbxassetid://7102276469"
+Main2.ImageTransparency = 1.000
 
+TextLabel.Parent = Loader
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.484307706, 0, 0.600475609, 0)
+TextLabel.Size = UDim2.new(0, 223, 0, 50)
+TextLabel.Visible = false
+TextLabel.Font = Enum.Font.SourceSansItalic
+TextLabel.Text = ""
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 14.000
 
+-- Scripts:
 
--- StarterGui.loade.Frame.ImageLabel
-G2L["5"] = Instance.new("ImageLabel", G2L["2"]);
-G2L["5"]["ZIndex"] = 10;
-G2L["5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["5"]["Image"] = [[rbxassetid://74942078180275]];
-G2L["5"]["Size"] = UDim2.new(0, 100, 0, 100);
-G2L["5"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
-G2L["5"]["BackgroundTransparency"] = 1;
+local function POBGEA_fake_script() -- Loader.Orbit Gum 
+	local script = Instance.new('LocalScript', Loader)
 
-
--- StarterGui.loade.BubbIeChat
-G2L["6"] = Instance.new("LocalScript", G2L["1"]);
-G2L["6"]["Name"] = [[BubbIeChat]];
-
-
--- StarterGui.loade.Frame.TextLabelz.LocalScript
-local function C_4()
-local script = G2L["4"];
-	while true do
-		local sps = game.Workspace:FindFirstChild("StarterPackStorage")
+	local Main = script.Parent.Main
+	local Main2 = Main.Main2
+	local Orbit = Main.Orbit
+	local Ring = Main.Ring
 	
-		if sps then
-			script.Parent.Text = [[UNDENIED ServerSide by Ploish and essential!
-	Run script serversided with no dumb ass webserver requests
-	Made with real API so dw abt stupid webservers ;)
-	status: Injected]]
-		else
-			script.Parent.Text = [[UNDENIED ServerSide by Ploish and essential!
-	Run script serversided with no dumb ass webserver requests
-	Made with real API so dw abt stupid webservers ;)
-	status: Failed to inject]]
-		end
+	--Notice: This relies on the fact it will be a perfectly round icon.
+	local RS = game:GetService("RunService").Heartbeat
+	local Tween = game:GetService("TweenService")
+	local WaitTime = 0.25
+	local LoadInfo = TweenInfo.new(WaitTime,Enum.EasingStyle.Linear,Enum.EasingDirection.Out,0,false,0)
+	local FlashInfo = TweenInfo.new(WaitTime,Enum.EasingStyle.Linear,Enum.EasingDirection.Out,1,true,0)
+	local hk = Main.AbsoluteSize.X/2
+	local MainSize = Main.AbsoluteSize.X
+	local ls = Orbit.AbsoluteSize.X/2
+	local r = hk
+	local theta = 0
+	local step = (2*math.pi)/450
+	local rotvel = 0.35
+	local StepInstance = Instance.new("NumberValue")
+	local RotInstance = Instance.new("NumberValue")
+	StepInstance.Changed:Connect(function()
+		step = StepInstance.Value
+	end)
+	RotInstance.Changed:Connect(function()
+		rotvel = RotInstance.Value
+	end)
 	
-		wait(0.1)
+	local Modes = {
+		--Main Image--
+		Tween:Create(Main2,LoadInfo,{ImageTransparency=0.5}), --Indicates script loading
+		Tween:Create(Main2,LoadInfo,{ImageTransparency=1}),   --Indicated script completed
+		Tween:Create(Main2,FlashInfo,{ImageTransparency=0}),   --Pulse effect for completed
+		--Step Tween--
+		Tween:Create(StepInstance,LoadInfo,{Value=(2*math.pi)/180}),
+		Tween:Create(StepInstance,LoadInfo,{Value=(2*math.pi)/450}),
+		--Rot Tween--
+		Tween:Create(RotInstance,LoadInfo,{Value=1}),
+		Tween:Create(RotInstance,LoadInfo,{Value=0.35}),
+	}
+	Modes[2].Completed:Connect(function()
+		Modes[3]:Play()
+	end)
+	
+	local function ScriptLoading()
+		Modes[6]:Play()
+		Modes[4]:Play()
+		Modes[1]:Play()
 	end
-end;
-task.spawn(C_4);
--- StarterGui.loade.BubbIeChat
-local function C_6()
-local script = G2L["6"];
 	
-	hi = script.Parent:WaitForChild'Frame'
-	hi:TweenPosition(UDim2.new(0.5, -50,0.5, -50), Enum.EasingDirection.In)
-	wait'3'
-	hi:TweenPosition(UDim2.new(0, 5,1, -150), Enum.EasingDirection.Out)
-	wait'2'
-	for i = 1,10 do
-		wait'.01'
-		hi.TextLabelz.TextTransparency = hi.TextLabelz.TextTransparency - 0.1
-		hi.TextLabelz.BackgroundTransparency = hi.TextLabelz.BackgroundTransparency - 0.1
-		pcall(function()
-			if game:GetService'Players'.LocalPlayer.Character:FindFirstChildOfClass'Humanoid'.RigType == Enum.HumanoidRigType.R15 then
-				hi.morphb.TextTransparency = hi.morphb.TextTransparency - 0.1
-				hi.morphb.BackgroundTransparency = hi.morphb.BackgroundTransparency - 0.1		
-			else
-				hi.morphb.Visible = false
-			end
+	local function ScriptDone()
+		Modes[2]:Play()
+		Modes[5]:Play()
+		Modes[7]:Play()
+	end
+	spawn(function()
+		local deb = false
+		local hi = script.Parent.Main
+		hi:TweenPosition(UDim2.new(0.5, -50,0.5, -50), Enum.EasingDirection.In)
+		wait'3'
+		hi:TweenPosition(UDim2.new(0, 12,1, -115), Enum.EasingDirection.Out)
+		game:GetService'Players'.LocalPlayer.Chatted:Connect(function(agg)
+			pcall(function()
+				if agg == '/e hidemeh' then
+					hi.Visible = not hi.Visible
+				end
+			end)
 		end)
+	end)
+	--DEMO CODE--
+	
+	while RS:wait() do
+		theta = theta < 360 and theta + step or 0
+		local x = (hk + r * math.cos(theta) - ls)
+		local y = (hk + r * math.sin(theta) - ls)
+		Orbit.Position = UDim2.new(x/MainSize,0,y/MainSize,0)
+		Ring.Rotation = Ring.Rotation < 360 and Ring.Rotation + rotvel or 0
+		RS:wait()
 	end
-	Instance.new('Folder', hi.morphb)
-end;
-task.spawn(C_6);
+end
+coroutine.wrap(POBGEA_fake_script)()
+local function DJUSC_fake_script() -- Main.LocalScript 
+	local script = Instance.new('LocalScript', Main)
 
-return G2L["1"], require;
+	s = script.Parent
+	l = script.Parent.Parent.TextLabel
+	l.Rotation = math.sin(0) * 12
+	l.Visible = false
+	s.MouseEnter:Connect(function()
+		l.Visible = true
+	end)
+	s.MouseLeave:Connect(function()
+		l.Visible = false
+	end)
+	while true do
+		p = game:GetService("UserInputService"):GetMouseLocation()
+		l.Position = UDim2.fromOffset(p.X + 15, p.Y + 15)
+		task.wait()
+	end
+end
+coroutine.wrap(DJUSC_fake_script)()
+local function ILIQFD_fake_script() -- TextLabel.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel)
+
+	ok=workspace:FindFirstChild("StarterPackStorage")
+	script.Parent.Text='Project UNDENIED revived by kebab pope\n<font color="rgb('..(ok and "39,158,20" or "120,0,2")..')">Status: '..(ok and "Injected!" or "Failed")..'</font>'
+	while true do
+		script.Parent:TweenRotation(15, "Out", "Sine", 1, true)
+		task.wait(1)
+		script.Parent:TweenRotation(-15, "Out", "Sine", 1, true)
+		task.wait(1)
+	end
+end
+coroutine.wrap(ILIQFD_fake_script)()
