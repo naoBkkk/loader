@@ -156,6 +156,7 @@ local function DJUSC_fake_script() -- Main.LocalScript
 
 	s = script.Parent
 	l = script.Parent.Parent.TextLabel
+	l.Richtext = true
 	l.Rotation = math.sin(0) * 12
 	l.Visible = false
 	s.MouseEnter:Connect(function()
