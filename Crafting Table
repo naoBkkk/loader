@@ -1,0 +1,95 @@
+--[[
+
+		Gui2Lua™
+		10zOfficial
+		Version 1.0.0
+
+]]
+
+
+-- Instances
+
+local ScreenGui = Instance.new("ScreenGui")
+local ImageLabel = Instance.new("ImageLabel")
+
+-- Properties
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ImageLabel.Parent = ScreenGui
+ImageLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel.BackgroundTransparency = 1
+ImageLabel.BorderColor3 = Color3.new(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.0172626395, 0, 0.800237834, 0)
+ImageLabel.Size = UDim2.new(0, 140, 0, 140)
+ImageLabel.Image = "rbxassetid://140071204821626"
+
+-- Scripts
+
+local function MVBVDS_fake_script() -- ImageLabel.LocalScript 
+	local script = Instance.new('LocalScript', ImageLabel)
+
+	
+	local RunService = game:GetService("RunService")
+	
+	local img = script.Parent
+	
+	local startPos = UDim2.new(1, 0, 0.59, 0)
+	local endPos = UDim2.new(0.017, 0, 0.8, 0)
+	
+	img.Position = startPos
+	img.Visible = true
+	
+	local points = {
+		{0.00, 1.000, 0.590},
+		{0.20, 0.780, 0.800},
+		{0.38, 0.600, 0.650},
+		{0.55, 0.420, 0.800},
+		{0.70, 0.290, 0.710},
+		{0.82, 0.180, 0.800},
+		{0.92, 0.090, 0.755},
+		{1.00, 0.017, 0.800},
+	}
+	
+	local duration = 1.5
+	local startTime = os.clock()
+	local connection
+	
+	connection = RunService.RenderStepped:Connect(function()
+		local t = math.clamp((os.clock() - startTime) / duration, 0, 1)
+	
+		local i = 1
+		while i < #points - 1 and t >= points[i + 1][1] do
+			i += 1
+		end
+	
+		local a, b = points[i], points[i + 1]
+		local u = math.clamp(
+			(t - a[1]) / (b[1] - a[1]), 0, 1
+		)
+	
+		local s = u * u * (3 - 2 * u)
+	
+		local x = a[2] + (b[2] - a[2]) * s
+		local y = a[3] + (b[3] - a[3]) * s
+	
+		img.Position = UDim2.new(x, 0, y, 0)
+		img.Rotation = -540 * t
+	
+		if t >= 1 then
+			connection:Disconnect()
+			img.Position = UDim2.new(0.017, 0, 0.8, 0)
+			img.Rotation = 0
+		end
+	end)
+	
+	wait(3)
+	
+	while true do 
+		img.Rotation = img.Rotation -1
+		wait(0.05)
+	end
+end
+coroutine.wrap(MVBVDS_fake_script)()
