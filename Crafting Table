@@ -16,6 +16,7 @@ local ImageLabel = Instance.new("ImageLabel")
 
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
 
 ImageLabel.Parent = ScreenGui
 ImageLabel.BackgroundColor3 = Color3.new(1, 1, 1)
